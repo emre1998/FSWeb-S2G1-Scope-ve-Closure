@@ -87,13 +87,13 @@ Aşağıdaki macSonucu() fonksiyonununda aşağıdakileri yapınız:
   "KonukTakim": 80
 }
 */ 
-function macSonucu(takimSkoru, ceyrekSayisi){
+function macSonucu(callback, ceyrekSayisi){
     let EvSahibiSkor = 0;
     let KonukTakimSkor = 0;
 
     for(let i = 1; i <= ceyrekSayisi; i++){
-        let EvSahibiCeyrekSkoru = takimSkoru();
-        let KonukTakimCeyrekSkoru =takimSkoru();
+        let EvSahibiCeyrekSkoru = callback();
+        let KonukTakimCeyrekSkoru =callback();
 
         EvSahibiSkor += EvSahibiCeyrekSkoru;
         KonukTakimSkor += KonukTakimCeyrekSkoru;
@@ -107,7 +107,7 @@ function macSonucu(takimSkoru, ceyrekSayisi){
     };
 }
 
-let sonuc = macSonucu(takimSkoru, 4);
+let sonuc = macSonucu(callback, 4);
 console.log(sonuc);
 
 
@@ -128,9 +128,9 @@ Aşağıdaki periyotSkoru() fonksiyonununda aşağıdakileri yapınız:
   */
 
 
-function periyotSkoru(takimSkoru){
-    let EvSahibiSkor = takimSkoru();
-    let KonukTakimSkor =takimSkoru();
+function periyotSkoru(callback){
+    let EvSahibiSkor = callback();
+    let KonukTakimSkor = callback();
 
     return {
         "EvSahibi": EvSahibiSkor,
